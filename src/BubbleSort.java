@@ -5,7 +5,7 @@ public class BubbleSort {
     static ArrayList<Integer> sort(ArrayList<Integer> arr) {
         for (int i = arr.size() - 1; i > 0 ; i--) {
             int nextNum = i -1;
-            if ((arr.get(i)) > (arr.get(i - 1)) ) {
+            if ((arr.get(nextNum)) > (arr.get(i)) ) {
                 Collections.swap(arr, nextNum, i);
             }
         }
