@@ -13,6 +13,10 @@ public class SelectionSortArrayList {
       }
 
       Collections.swap(arr, minIndex, i);
+      //or we can swap manually
+      //int temp = arr.get(minIndex);
+      //arr.set(minIndex, arr.get(i));
+      //arr.set(i, temp);
     }
 
     return arr;
