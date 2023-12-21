@@ -3,10 +3,12 @@ import java.util.Collections;
 
 public class BubbleSort {
     static ArrayList<Integer> sort(ArrayList<Integer> arr) {
-        for (int i = arr.size() - 1; i > 0 ; i--) {
-            int nextNum = i -1;
-            if ((arr.get(nextNum)) > (arr.get(i)) ) {
-                Collections.swap(arr, nextNum, i);
+        int n = arr.size();
+        for (int i = 0; i < n-1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if ((arr.get(j)) > (arr.get(j+1))) {
+                    Collections.swap(arr, j, j+1);
+                }
             }
         }
 
@@ -16,8 +18,8 @@ public class BubbleSort {
     public static void main(String[] args) {
 
         ArrayList<Integer> arr = new ArrayList<Integer>();
-        arr.add(12);
-        arr.add(25);
+        arr.add(33);
+        arr.add(20);
         arr.add(12);
         arr.add(22);
         arr.add(64);
