@@ -2,20 +2,25 @@ import java.util.ArrayList;
 
 public class InsertionSort {
     public static ArrayList<Integer> sort(ArrayList<Integer> arr) {
-        int n = arr.size();
-        for (int i = 1; i < n; i++) {
-            int key = arr.get(i);
-            int j;
-            for (j = i - 1; j >= 0 && arr.get(j) > key; j--) {
-                arr.set(j + 1, arr.get(j));
+            int n = arr.size();
+            for (int i = 1; i < n; ++i) {
+                int key = arr.get(i);
+                int j = i - 1;
+
+                // Move elements of arr[0..i-1], that are greater than key,
+                // to one position ahead of their current position
+                while (j >= 0 && arr.get(j) > key) {
+                    arr.set(j + 1, arr.get(j));
+                    j = j - 1;
+                }
+                arr.set(j + 1, key);
             }
-            arr.set(j + 1, key);
+              return arr;
         }
-        return arr;
-    }
+      
+    
 
     public static void main(String[] args) {
-
         ArrayList<Integer> arr = new ArrayList<Integer>();
         arr.add(33);
         arr.add(20);
